@@ -2,8 +2,6 @@
 
 window.addEventListener('load', function () {
 
-  console.log('In call.js');
-
   // Fetch token and if things work, carry on
   xhr("GET", "/api/session/" + call_id + "/token", function xhr_cb(err, data) {
     console.log('In xhr');
@@ -45,7 +43,7 @@ window.addEventListener('load', function () {
         mirror: false
       }, function (err) {
         if (err) {
-          alert("Error in publishing");
+          alert("Error in publishing" + err);
           console.log("Error in publishing", err);
           return;
         }
